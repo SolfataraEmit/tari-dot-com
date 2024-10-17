@@ -6,7 +6,11 @@ But what is Tari? How is it different to Minotari? What are templates, and Tari 
 
 This tutorial will take you through a couple of items:
 * Explaining the basic concepts of Tari, Minotari, and how they interact.
-* Explaining Tari's contract
+* Explaining Tari's contract system.
+* Get your dev environment set up, along with testbed for testing your Tari app.
 
+This tutorial assumes some basic understanding of blockchains and some of their fundamental concepts. You should ideally know what a blockchain is; if you don't, before you get into it, we suggest checking out the first four courses of Tari Labs before you begin.
 
-This tutorial is really about introducing you to some of the basic concepts of Tari, how it works, setting up your development environment along with a testbed ready to start testing out your Tari applications.
+## What is Tari?
+
+Tari is an open-source blockchain protocol that operates essentially on two layers. The first part of this is Minotari, which is the base layer. The second is the Ootle, which is the Digital Asset Network. This is essentially the layer on which your app (and our tutorial app) will operate - providing the ability to conduct transactions, play blockchain games, archival services and more.
