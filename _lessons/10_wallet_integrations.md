@@ -6,13 +6,15 @@ This document covers the details of creating and/or integrating a wallet in the 
 
 ## Minotari, Ootle and wallet considerations
 
-Minotari is the base layer, and is fundamentally the engine of Tari. Through proof-of-work merge mining, Minotari ensures the validity and security of the network and transactions on it. Miners are rewarded for their efforts through the generation of Minotari (XTM) coins in addition to Monero through merge mining. The layer also serves the following roles (which may have implications for the kind of wallet you would like to create). Minotari utilises the MimbleWimble protocol for its transactional model, with extensions that allow for scripting, stealth addresses and other features not provided by default in the standard MimbleWimble protocol.
+Minotari is the base layer, and is fundamentally the engine of Tari. Through proof-of-work merge mining, Minotari ensures the validity and security of the network and transactions on it. Miners are rewarded for their efforts through the generation of Minotari (XTM) coins in addition to Monero through merge mining. Minotari utilises the MimbleWimble protocol for its transactional model, with extensions that allow for scripting, stealth addresses and other features not provided by default in the standard MimbleWimble protocol.
+
+
 
 This ties into the second layer, the Ootle, in several ways. The first is the Ootle layer's tokens, Tari (XTR), can only be created through the process of "burning" Minotari coins. This is the only method by which new Tari can be introduced into the second-layer. The Minotari layer also maintains a register of validator nodes that are used to verify transactions on the second layer, contract templates used to perform actions on the second layer (such as the creation of Digital Assets) and store smart contracts that allow for special transactional requirements and decentralised apps (dapps).
 
 This has several implications for those designing wallets to operate on the Minotari layer:
 
-* Wallets do not use addresses, instead relying on public and private keys and negotiated transactions between online participants
+* Wallets do not use addresses, instead relying on public and private keys and negotiated transactions between online participants.
 * Minotari, through TariScript, allows for additional functionality such as once-off payments, covenants and stealth addresses that wallets need to be able to take into account.
 
 ## Tari wallet libraries
@@ -41,7 +43,7 @@ This should be your first port of call for developing a wallet on the Minotari l
 libminotari_wallet_library = { path = "../libminotari_wallet_library" }
 ```
 
-For an example of a wallet using the wallet library, you can review the [Minotari Console wallet code here](https://github.com/tari-project/tari/blob/development/applications/minotari_console_wallet/), which is designed to work with XTM.
+For an example of a wallet using just the wallet library, you can review the [Minotari Console wallet code here](https://github.com/tari-project/tari/blob/development/applications/minotari_console_wallet/), which is designed to work with XTM.
 
 ### wallet_fii
 
@@ -62,9 +64,5 @@ cargo build --release --target aarch64-linux-android
 
 The FFI has inline documentation for the various functions that are available. While there are several ways you can generate and view this documentation, one of the easiest to use Cargo via `cargo doc --open --no-deps`, which will generate and open the documentation in your default browser.
 
-The Aurora Wallet is an example of a wallet designed using the FFI for transacting in Tari, which is the second layer token. If you would like to review the implementation of this, you [can check out the Aurora project here](https://github.com/tari-project/wallet-android)
-
-## A Note On Tari Wallets
-
-Unlike Minotari Wallets, Tari wallets are operating on the Ootle, and are primarily concerned with transactions regarding Tari tokens and other digital assets, such as NFTs, 
+The Aurora Wallet is an example of a wallet designed using the FFI. If you would like to review the implementation of this, you [can check out the Aurora project here](https://github.com/tari-project/wallet-android)
 
