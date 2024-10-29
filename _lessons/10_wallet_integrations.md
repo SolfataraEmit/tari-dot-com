@@ -8,7 +8,7 @@ This document covers the details of creating and/or integrating a wallet in the 
 
 Minotari is the base layer, and is fundamentally the engine of Tari. Through proof-of-work merge mining, Minotari ensures the validity and security of the network and transactions on it. Miners are rewarded for their efforts through the generation of Minotari (XTM) coins in addition to Monero through merge mining. Minotari utilises the MimbleWimble protocol for its transactional model, with extensions that allow for scripting, stealth addresses and other features not provided by default in the standard MimbleWimble protocol.
 
-
+The base nodes are the primary 
 
 This ties into the second layer, the Ootle, in several ways. The first is the Ootle layer's tokens, Tari (XTR), can only be created through the process of "burning" Minotari coins. This is the only method by which new Tari can be introduced into the second-layer. The Minotari layer also maintains a register of validator nodes that are used to verify transactions on the second layer, contract templates used to perform actions on the second layer (such as the creation of Digital Assets) and store smart contracts that allow for special transactional requirements and decentralised apps (dapps).
 
