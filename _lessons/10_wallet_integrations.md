@@ -8,14 +8,18 @@ This document covers the details of creating and/or integrating a wallet in the 
 
 Minotari is the base layer, and is fundamentally the engine of Tari. Through proof-of-work merge mining, Minotari ensures the validity and security of the network and transactions on it. Miners are rewarded for their efforts through the generation of Minotari (XTM) coins in addition to Monero through merge mining. Minotari utilises the MimbleWimble protocol for its transactional model, with extensions that allow for scripting, stealth addresses and other features not provided by default in the standard MimbleWimble protocol.
 
-The base nodes are the primary 
+This has several implications for those designing wallets to operate on the Minotari layer:
+
+* Wallets do not use addresses, instead relying on a single master key upon initialization of the wallet and then subsequent sets of public and private keys for transactions, mining and other activities.
+* Minotari, through TariScript, allows for additional functionality such as once-off payments, covenants and stealth addresses that wallets need to be able to take into account.
+* The wallet needs to contain all of the information required for transactions. This includes the public and private keys (the latter)
+
+
+
+
 
 This ties into the second layer, the Ootle, in several ways. The first is the Ootle layer's tokens, Tari (XTR), can only be created through the process of "burning" Minotari coins. This is the only method by which new Tari can be introduced into the second-layer. The Minotari layer also maintains a register of validator nodes that are used to verify transactions on the second layer, contract templates used to perform actions on the second layer (such as the creation of Digital Assets) and store smart contracts that allow for special transactional requirements and decentralised apps (dapps).
 
-This has several implications for those designing wallets to operate on the Minotari layer:
-
-* Wallets do not use addresses, instead relying on public and private keys and negotiated transactions between online participants.
-* Minotari, through TariScript, allows for additional functionality such as once-off payments, covenants and stealth addresses that wallets need to be able to take into account.
 
 ## Tari wallet libraries
 
